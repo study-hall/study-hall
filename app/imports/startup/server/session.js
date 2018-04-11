@@ -4,15 +4,15 @@ import { TutorSessions } from '../../api/session/session.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(`  Adding: ${data.tutor} (${data.owner})`);
   TutorSessions.insert(data);
 }
 
 /** Initialize the collection if empty. */
 if (TutorSessions.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
+  if (Meteor.settings.defaultSession) {
+    console.log('Creating default session.');
+    Meteor.settings.defaultSession.map(data => addData(data));
   }
 }
 

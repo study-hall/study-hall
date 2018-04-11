@@ -34,9 +34,9 @@ class TutorSignup extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, course, coursenumber, location, date } = data;
+    const { tutor, course, coursenumber, location, date, time } = data;
     const owner = Meteor.user().username;
-    TutorSessions.insert({ name, course, coursenumber, location, date, owner }, this.insertCallback);
+    TutorSessions.insert({ tutor, course, coursenumber, location, date, time, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -47,11 +47,12 @@ class TutorSignup extends React.Component {
             <Header as="h2" textAlign="center">Tutoring Session</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={SessionSchema} onSubmit={this.submit}>
               <Segment>
-                <TextField name='name'/>
+                <TextField name='tutor'/>
                 <TextField name='course'/>
                 <NumField name='coursenumber' decimal={false}/>
                 <TextField name='location'/>
                 <TextField name='date'/>
+                <TextField name='time'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
