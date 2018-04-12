@@ -1,12 +1,14 @@
 import React from 'react';
-import { Grid, Icon, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Grid, Icon, Button } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     const nameStyle = { fontSize: '50px' };
     const itemColor = { color: '#FFFF00' };
-    const imageStyle = { width: '1450px', height: '500px', marginTop: '50px' };
+    /* eslint-disable-next-line max-len */
+    const topMargin = { marginTop: '50px' };
     return (
         <div>
           <Grid columns={3} style={itemColor} container stackable centered>
@@ -38,7 +40,16 @@ class Landing extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Image src="/images/library.jpg" size='small' centered fluid style={imageStyle}></Image>
+          <div className='landing-background' style={topMargin}>
+            <Grid style={itemColor} container stackable centered>
+              <Grid.Column textAlign='center' style={topMargin}>
+                <Button.Group vertical size='massive'>
+                  <Link to="/signup"><Button color='blue'>Signup Now!</Button></Link>
+                  <Link to="/signin"><Button color='pink'>Login</Button></Link>
+                </Button.Group>
+              </Grid.Column>
+            </Grid>
+          </div>
         </div>
     );
   }
