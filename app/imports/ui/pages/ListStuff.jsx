@@ -14,11 +14,13 @@ class ListStuff extends React.Component {
     return (this.props.ready) ? this.renderPage() : <Loader>Getting data</Loader>;
   }
 
+
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const itemColor = { color: '#FFFF00' };
     return (
         <Container>
-          <Header as="h2" textAlign="center">Class List</Header>
+          <Header as="h2" textAlign="center" style={itemColor}>My Class List</Header>
           <Table celled>
             <Table.Header>
               <Table.Row>
