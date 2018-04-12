@@ -18,14 +18,14 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List Stuff</Header>
+          <Header as="h2" textAlign="center">Class List</Header>
           <Table celled>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Condition</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
+                <Table.HeaderCell>Department</Table.HeaderCell>
+                <Table.HeaderCell>Subject</Table.HeaderCell>
+                <Table.HeaderCell>Course Number</Table.HeaderCell>
+                <Table.HeaderCell>Contact Tutor</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
