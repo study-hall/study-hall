@@ -16,7 +16,7 @@ const StuffSchema = new SimpleSchema({
     type: String,
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
-  },*/
+  }, */
 
 }, { tracker: Tracker });
 

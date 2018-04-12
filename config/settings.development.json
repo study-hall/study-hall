@@ -5,10 +5,9 @@
   ],
 
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    { "department": "ICS", "ClassName": "Algorithms", "CourseNumber": 311, "owner": "john@foo.com" },
+    { "department": "ICS", "ClassName": "Software Engineering", "CourseNumber": 314, "owner": "john@foo.com" },
+    { "department": "ENG", "ClassName": "Composition I", "CourseNumber": 100, "owner": "admin@foo.com" }
   ],
 
   "defaultSession": [
@@ -21,3 +20,4 @@
       "owner": "john@foo.com" }
   ]
 }
+
