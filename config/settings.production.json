@@ -1,7 +1,7 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "admin@foo.com", "username": "Admin", "password": "changeme", "role": "admin" },
+    { "email": "john@foo.com", "username": "John", "password": "changeme" }
   ],
 
   "defaultData": [
@@ -19,6 +19,7 @@
       "time": "2:45pm",
       "owner": "john@foo.com" }
   ],
+
   "galaxy.meteor.com": {
     "env": {
       "MONGO_URL": "mongodb://jkbishay:jkb47@ds143039.mlab.com:43039/studyhall"
