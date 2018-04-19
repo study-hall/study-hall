@@ -14,7 +14,7 @@ class SessionItem extends React.Component {
           <Table.Cell>{this.props.session.date}</Table.Cell>
           <Table.Cell>{this.props.session.time}</Table.Cell>
           <Table.Cell>
-            <Link to={`/edit/${this.props.session._id}`}>Edit</Link>
+            <Link to={`/edit-session/${this.props.session._id}`}>Edit</Link>
           </Table.Cell>
         </Table.Row>
     );
