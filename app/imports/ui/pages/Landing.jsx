@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Icon, Button } from 'semantic-ui-react';
+import { Grid, Icon, Button, Image } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -9,6 +9,7 @@ class Landing extends React.Component {
     const itemColor = { color: '#FFFF00' };
     /* eslint-disable-next-line max-len */
     const topMargin = { marginTop: '50px' };
+    // const combined = _.extends({}, itemColor, topMargin);
     return (
         <div>
           <Grid columns={3} style={itemColor} container stackable centered>
@@ -37,6 +38,25 @@ class Landing extends React.Component {
                 <h1>Become a Tutor!</h1>
                 {/* eslint-disable-next-line max-len */}
                 <h3>Experienced in a class? You can sign up and offer help to others for subjects as well.</h3>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          <Grid columns={2} style={topMargin} container stackable centered>
+            <Grid.Row>
+              <Grid.Column>
+                <Image src="../../images/classlist.png" bordered medium></Image>
+              </Grid.Column>
+              <Grid.Column textAlign='center'>
+                <h2>Create an account and start browsing the list of available classes.</h2>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column textAlign='center'>
+                {/* eslint-disable-next-line max-len */}
+                <h2>Want to offer help to others? Create a study session for a class that you want to tutor for.</h2>
+              </Grid.Column>
+              <Grid.Column>
+                <Image src="../../images/createsession.png" bordered medium></Image>
               </Grid.Column>
             </Grid.Row>
           </Grid>
