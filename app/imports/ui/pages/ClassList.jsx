@@ -1,10 +1,11 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Menu } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ClassList extends React.Component {
@@ -18,35 +19,57 @@ class ClassList extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const itemColor = { color: '#000' };
+    const itemSize = { fontSize: '1.3em' };
+    const menuStyle = { borderColor: 'white', fontSize: '12px'};
     return (
         <Container>
-          <Header as="h2" textAlign="center" style={itemColor}>Class List</Header>
+
           <Table celled>
             <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Department</Table.HeaderCell>
-                <Table.HeaderCell>Course Number</Table.HeaderCell>
-                <Table.HeaderCell>Subject</Table.HeaderCell>
+              <Table.Row style={itemSize}>
+                <Table.HeaderCell textAlign="center">Departments</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
               <Table.Row>
-                <Table.Cell>Biology</Table.Cell>
-                <Table.Cell>421</Table.Cell>
-                <Table.Cell>Immunology</Table.Cell>
+                <Table.Cell>
+                  <Menu style={menuStyle} attached="top" borderless>
+                    <Menu.Item as={NavLink} activeClassName="" exact to="Accounting">
+                      <Header>Accounting (ACC)</Header>
+                    </Menu.Item>
+                  </Menu>
+                </Table.Cell>
               </Table.Row>
 
               <Table.Row>
-                <Table.Cell>ICS</Table.Cell>
-                <Table.Cell>311</Table.Cell>
-                <Table.Cell>Algorithms</Table.Cell>
+                <Table.Cell>
+                  <Menu style={menuStyle} attached="top" borderless>
+                    <Menu.Item as={NavLink} activeClassName="" exact to="Biology">
+                      <Header>Biology (BIOL)</Header>
+                    </Menu.Item>
+                  </Menu>
+                </Table.Cell>
               </Table.Row>
 
               <Table.Row>
-                <Table.Cell>Physics</Table.Cell>
-                <Table.Cell>101</Table.Cell>
-                <Table.Cell>Intro to Physics</Table.Cell>
+                <Table.Cell>
+                  <Menu style={menuStyle} attached="top" borderless>
+                    <Menu.Item as={NavLink} activeClassName="" exact to="ICS">
+                      <Header>Information& Computer Sciences (ICS)</Header>
+                    </Menu.Item>
+                  </Menu>
+                </Table.Cell>
+              </Table.Row>
+
+              <Table.Row>
+                <Table.Cell>
+                  <Menu style={menuStyle} attached="top" borderless>
+                    <Menu.Item as={NavLink} activeClassName="" exact to="Physics">
+                      <Header>Physics (PHYS)</Header>
+                    </Menu.Item>
+                  </Menu>
+                </Table.Cell>
               </Table.Row>
 
             </Table.Body>
