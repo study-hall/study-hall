@@ -7,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListStuff extends React.Component {
+class ClassList extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -20,18 +20,35 @@ class ListStuff extends React.Component {
     const itemColor = { color: '#000' };
     return (
         <Container>
-          <Header as="h2" textAlign="center" style={itemColor}>My Class List</Header>
+          <Header as="h2" textAlign="center" style={itemColor}>Class List</Header>
           <Table celled>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Department</Table.HeaderCell>
-                <Table.HeaderCell>Subject</Table.HeaderCell>
                 <Table.HeaderCell>Course Number</Table.HeaderCell>
-                <Table.HeaderCell>Contact Tutor</Table.HeaderCell>
+                <Table.HeaderCell>Subject</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
+
             <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
+              <Table.Row>
+                <Table.Cell>Biology</Table.Cell>
+                <Table.Cell>421</Table.Cell>
+                <Table.Cell>Immunology</Table.Cell>
+              </Table.Row>
+
+              <Table.Row>
+                <Table.Cell>ICS</Table.Cell>
+                <Table.Cell>311</Table.Cell>
+                <Table.Cell>Algorithms</Table.Cell>
+              </Table.Row>
+
+              <Table.Row>
+                <Table.Cell>Physics</Table.Cell>
+                <Table.Cell>101</Table.Cell>
+                <Table.Cell>Intro to Physics</Table.Cell>
+              </Table.Row>
+
             </Table.Body>
           </Table>
         </Container>
@@ -40,7 +57,7 @@ class ListStuff extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListStuff.propTypes = {
+ClassList.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -53,4 +70,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListStuff);
+})(ClassList);

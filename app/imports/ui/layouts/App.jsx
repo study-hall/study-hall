@@ -15,6 +15,7 @@ import ManageSessions from '../pages/ManageSessions';
 import EditSession from '../pages/EditSession';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
+import ClassList from '../pages/ClassList';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 
@@ -28,6 +29,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
+              <Route path="/ClassList" component={ClassList}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
