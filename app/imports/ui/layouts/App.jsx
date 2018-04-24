@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 import Landing from '../pages/Landing';
 import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
+import AddUser from '../pages/AddUser';
 import EditStuff from '../pages/EditStuff';
 import TutorSignup from '../pages/TutorSignup';
 import ManageSessions from '../pages/ManageSessions';
@@ -40,7 +40,7 @@ class App extends React.Component {
               <Route path="/Physics" component={Physics}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
+              <ProtectedRoute path="/add" component={AddUser}/>
               <ProtectedRoute path="/create-session" component={TutorSignup}/>
               <ProtectedRoute path="/manage-session" component={ManageSessions}/>
               <ProtectedRoute path="/edit-session/:_id" component={EditSession}/>
