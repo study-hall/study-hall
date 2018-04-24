@@ -1,2 +1,4 @@
 import '/imports/api/stuff';
-import '/imports/api/session';
+import './user.js';
+import './session.js';
+

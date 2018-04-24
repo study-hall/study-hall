@@ -1,23 +1,41 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    }
   ],
 
-  "defaultData": [
-    { "department": "ICS", "ClassName": "Algorithms", "CourseNumber": 311, "owner": "john@foo.com" },
-    { "department": "ICS", "ClassName": "Software Engineering", "CourseNumber": 314, "owner": "john@foo.com" },
-    { "department": "ENG", "ClassName": "Composition I", "CourseNumber": 100, "owner": "admin@foo.com" }
-  ],
-
-  "defaultSession": [
-    { "tutor": "John Foo",
-      "course": "ICS",
-      "coursenumber": 311,
-      "location": "POST 126",
-      "date": "Apr 28",
-      "time": "2:45pm",
-      "owner": "john@foo.com" }
+  "defaultUsers": [
+    {
+      "firstName": "Seth",
+      "lastName": "Kinel",
+      "address": "2336 Hoonanea Street",
+      "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
+      "owner": "john@foo.com",
+      "description": "I am a student studying Computer Science."
+    },
+    {
+      "firstName": "William",
+      "lastName": "Bijansky",
+      "address": "POST 307, University of Hawaii",
+      "image": "https://avatars0.githubusercontent.com/u/7494478?s=460&v=4",
+      "owner": "john@foo.com",
+      "description": "I am a student studying Computer Science."
+    },
+    {
+      "firstName": "Kim",
+      "lastName": "Binsted",
+      "address": "POST 307, University of Hawaii",
+      "image": "https://pbs.twimg.com/profile_images/798636728852434944/Y2EMD2i5_400x400.jpg",
+      "owner": "admin@foo.com",
+      "description": "I am a student studying Computer Science."
+    }
   ]
 }
 
