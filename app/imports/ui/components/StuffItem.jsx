@@ -10,7 +10,7 @@ class StuffItem extends React.Component {
         <Table.Row>
           <Table.Cell>{this.props.stuff.department}</Table.Cell>
           <Table.Cell>{this.props.stuff.ClassName}</Table.Cell>
-          <Table.Cell>{this.props.stuff.CourseNumber}</Table.Cell>
+          <Table.Cell>{this.props.stuff.coursenumber}</Table.Cell>
           <Table.Cell>
             <Link to={`/edit/${this.props.stuff._id}`}>Contact</Link>
           </Table.Cell>

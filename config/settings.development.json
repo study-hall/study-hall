@@ -5,14 +5,14 @@
   ],
 
   "defaultData": [
-    { "department": "ICS", "ClassName": "Algorithms", "CourseNumber": 311, "owner": "john@foo.com" },
-    { "department": "ICS", "ClassName": "Software Engineering", "CourseNumber": 314, "owner": "john@foo.com" },
-    { "department": "ENG", "ClassName": "Composition I", "CourseNumber": 100, "owner": "admin@foo.com" }
+    { "department": "ICS", "ClassName": "Algorithms", "coursenumber": 311, "owner": "john@foo.com" },
+    { "department": "ICS", "ClassName": "Software Engineering", "coursenumber": 314, "owner": "john@foo.com" },
+    { "department": "ENG", "ClassName": "Composition I", "coursenumber": 100, "owner": "admin@foo.com" }
   ],
 
   "defaultSession": [
     { "tutor": "John Foo",
-      "course": "ICS",
+      "department": "ICS",
       "coursenumber": 311,
       "location": "POST 126",
       "date": "Apr 28",

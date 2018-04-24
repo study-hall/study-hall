@@ -8,7 +8,7 @@ class SessionItem extends React.Component {
   render() {
     return (
         <Table.Row>
-          <Table.Cell>{this.props.session.course}</Table.Cell>
+          <Table.Cell>{this.props.session.department}</Table.Cell>
           <Table.Cell>{this.props.session.coursenumber}</Table.Cell>
           <Table.Cell>{this.props.session.location}</Table.Cell>
           <Table.Cell>{this.props.session.date}</Table.Cell>

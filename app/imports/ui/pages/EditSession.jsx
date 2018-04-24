@@ -18,8 +18,8 @@ class EditSession extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { tutor, course, coursenumber, location, date, time, _id } = data;
-    TutorSessions.update(_id, { $set: { tutor, course, coursenumber, location, date, time } }, (error) => (error ?
+    const { tutor, department, coursenumber, location, date, time, _id } = data;
+    TutorSessions.update(_id, { $set: { tutor, department, coursenumber, location, date, time } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -38,7 +38,7 @@ class EditSession extends React.Component {
             <AutoForm schema={SessionSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='tutor'/>
-                <TextField name='course'/>
+                <TextField name='department'/>
                 <NumField name='coursenumber' decimal={false}/>
                 <TextField name='location'/>
                 <TextField name='date'/>
