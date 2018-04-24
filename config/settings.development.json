@@ -17,9 +17,9 @@
   ],
 
   "defaultData": [
-    { "department": "ICS", "ClassName": "Algorithms", "coursenumber": 311, "owner": "john@foo.com" },
-    { "department": "ICS", "ClassName": "Software Engineering", "coursenumber": 314, "owner": "john@foo.com" },
-    { "department": "ENG", "ClassName": "Composition I", "coursenumber": 100, "owner": "admin@foo.com" }
+    { "department": "ICS", "ClassName": "Algorithms", "coursenumber": 311, "owner": "JFoo" },
+    { "department": "ICS", "ClassName": "Software Engineering", "coursenumber": 314, "owner": "JFoo" },
+    { "department": "ENG", "ClassName": "Composition I", "coursenumber": 100, "owner": "Admin" }
   ],
 
   "defaultSession": [
