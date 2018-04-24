@@ -9,7 +9,7 @@ import Landing from '../pages/Landing';
 import UserHome from '../pages/UserHome';
 import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
+import AddTutor from '../pages/AddTutor';
 import EditStuff from '../pages/EditStuff';
 import TutorSignup from '../pages/TutorSignup';
 import ManageSessions from '../pages/ManageSessions';
@@ -42,7 +42,7 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/userhome" component={UserHome}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
+              <ProtectedRoute path="/add" component={AddTutor}/>
               <ProtectedRoute path="/create-session" component={TutorSignup}/>
               <ProtectedRoute path="/manage-session" component={ManageSessions}/>
               <ProtectedRoute path="/edit-session/:_id" component={EditSession}/>
