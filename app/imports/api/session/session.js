@@ -2,6 +2,8 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
+/** SimpleSchema.extendOptions(['autoform']); */
+
 /** Create a Meteor collection. */
 const TutorSessions = new Mongo.Collection('TutorSessions');
 
@@ -11,7 +13,7 @@ const SessionSchema = new SimpleSchema({
   course: String,
   coursenumber: Number,
   location: String,
-  date: String,
+  date: Date,
   time: String,
   owner: String,
 }, { tracker: Tracker });

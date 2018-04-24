@@ -8,14 +8,6 @@ function addData(data) {
   TutorSessions.insert(data);
 }
 
-/** Initialize the collection if empty. */
-if (TutorSessions.find().count() === 0) {
-  if (Meteor.settings.defaultSession) {
-    console.log('Creating default session.');
-    Meteor.settings.defaultSession.map(data => addData(data));
-  }
-}
-
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('TutorSessions', function publish() {
   if (this.userId) {

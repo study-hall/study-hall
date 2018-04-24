@@ -5,10 +5,11 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -22,6 +23,20 @@ class EditSession extends React.Component {
     TutorSessions.update(_id, { $set: { tutor, course, coursenumber, location, date, time } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: moment(),
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date,
+    });
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -41,11 +56,13 @@ class EditSession extends React.Component {
                 <TextField name='course'/>
                 <NumField name='coursenumber' decimal={false}/>
                 <TextField name='location'/>
-                <TextField name='date'/>
                 <TextField name='time'/>
+                Date
+                <DatePicker name='date' required selected={this.state.startDate} onChange={this.handleChange} />
+                <hr/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner'/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
           </Grid.Column>

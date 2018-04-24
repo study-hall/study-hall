@@ -7,8 +7,12 @@ import NumField from 'uniforms-semantic/NumField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 /** Renders the Page for adding a document. */
 class TutorSignup extends React.Component {
@@ -20,6 +24,16 @@ class TutorSignup extends React.Component {
     this.render = this.render.bind(this);
     this.insertCallback = this.insertCallback.bind(this);
     this.formRef = null;
+    this.state = {
+      startDate: moment(),
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date,
+    });
   }
 
   /** Notify the user of the results of the submit. If successful, clear the form. */
@@ -45,14 +59,19 @@ class TutorSignup extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Tutoring Session</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={SessionSchema} onSubmit={this.submit}>
+            <AutoForm ref={(ref) => {
+              this.formRef = ref;
+            }} schema={SessionSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='tutor'/>
                 <TextField name='course'/>
                 <NumField name='coursenumber' decimal={false}/>
                 <TextField name='location'/>
-                <TextField name='date'/>
                 <TextField name='time'/>
+                <DatePicker selected={this.state.startDate}
+                            onChange={this.handleChange} name='date'
+                            placeholderText='Click to select a date'/>
+                <hr/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
