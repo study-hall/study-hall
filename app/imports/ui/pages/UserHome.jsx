@@ -1,5 +1,9 @@
 import React from 'react';
 import { Grid, Card, Image, Icon, Table, Container } from 'semantic-ui-react';
+import { Stuffs } from '/imports/api/stuff/stuff';
+import { TutorSessions } from '/imports/api/session/session';
+import StuffItem from '/imports/ui/components/StuffItem';
+import SessionItem from '/imports/ui/components/SessionItem';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -22,7 +26,7 @@ render() {
             {this.props.usersMajor}
           </Card.Content>
           <Card.Content extra>
-            7 sessions
+            {this.props.sessions.length} Sessions
             <Icon name='pencil alternate'/>
           </Card.Content>
         </Card>
@@ -37,17 +41,12 @@ render() {
                   <Table.Row>
                     <Table.HeaderCell>Subject</Table.HeaderCell>
                     <Table.HeaderCell>Course Number</Table.HeaderCell>
+                    <Table.HeaderCell>Course Number</Table.HeaderCell>
+                    <Table.HeaderCell>Contact Tutor</Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
                 <Table.Body>
-                  <Table.Row>
-                    <Table.Cell>Algorithms</Table.Cell>
-                    <Table.Cell>311</Table.Cell>
-                  </Table.Row>
-                  <Table.Row>
-                    <Table.Cell>Software Engineering</Table.Cell>
-                    <Table.Cell>314</Table.Cell>
-                  </Table.Row>
+                  {this.props.classes.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
                 </Table.Body>
               </Table>
             </Container>
@@ -58,19 +57,16 @@ render() {
               <Table celled>
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>Tutor</Table.HeaderCell>
+                    <Table.HeaderCell>Course</Table.HeaderCell>
+                    <Table.HeaderCell>Course Number</Table.HeaderCell>
+                    <Table.HeaderCell>Location</Table.HeaderCell>
                     <Table.HeaderCell>Date</Table.HeaderCell>
+                    <Table.HeaderCell>Time</Table.HeaderCell>
+                    <Table.HeaderCell>Manage</Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
                 <Table.Body>
-                  <Table.Row>
-                    <Table.Cell>Tutty Frooty</Table.Cell>
-                    <Table.Cell>Tomorrow</Table.Cell>
-                  </Table.Row>
-                  <Table.Row>
-                    <Table.Cell>DA DOOD</Table.Cell>
-                    <Table.Cell>Weneva</Table.Cell>
-                  </Table.Row>
+                  {this.props.sessions.map((session) => <SessionItem key={session._id} session={session} />)}
                 </Table.Body>
               </Table>
             </Container>
@@ -86,12 +82,23 @@ render() {
 UserHome.propTypes = {
   currentUser: PropTypes.string,
   usersMajor: PropTypes.string,
+  classes: PropTypes.array,
+  sessions: PropTypes.array,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-const UserHomeContainer = withTracker(() => ({
-  currentUser: Meteor.user() ? Meteor.user().profile.name : '',
-  usersMajor: Meteor.user() ? Meteor.user().profile.major : '',
-}))(UserHome);
+const UserHomeContainer = withTracker(() => {
+  const classList = Meteor.subscribe('Stuff');
+  /* eslint-disable-next-line no-unused-vars */
+  const sessionList = Meteor.subscribe('TutorSessions');
+  return {
+    currentUser: Meteor.user() ? Meteor.user().profile.name : '',
+    usersMajor: Meteor.user() ? Meteor.user().profile.major : '',
+    classes: Stuffs.find({}).fetch(),
+    sessions: TutorSessions.find({}).fetch(),
+    ready: classList.ready(),
+  };
+})(UserHome);
 
 export default withRouter(UserHomeContainer);
