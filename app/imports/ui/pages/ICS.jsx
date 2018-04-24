@@ -46,7 +46,7 @@ class ICS extends React.Component {
 
     return (
         <Container>
-          <Header as="h2" textAlign="center">Accounting Department Class List</Header>
+          <Header as="h2" textAlign="center">ICS Department Class List</Header>
           <Table celled fixed>
 
             <Table.Header>

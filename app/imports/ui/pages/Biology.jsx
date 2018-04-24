@@ -46,7 +46,7 @@ class Biology extends React.Component {
 
     return (
         <Container>
-          <Header as="h2" textAlign="center">Accounting Department Class List</Header>
+          <Header as="h2" textAlign="center">Biology Department Class List</Header>
           <Table celled fixed>
 
             <Table.Header>
