@@ -16,7 +16,7 @@ class NavBar extends React.Component {
           <Header inverted as='h1'>Study Hall</Header>
         </Menu.Item>
         {/* eslint-disable-next-line max-len */}{this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/userhome" key='add'>{this.props.currentUser}&#39;s Classes</Menu.Item>,
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/userhome" key='add'>My Classes</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>Add Class</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>Class List</Menu.Item>]
         ) : ''}

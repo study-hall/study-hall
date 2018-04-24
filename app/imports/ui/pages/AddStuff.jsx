@@ -35,7 +35,7 @@ class AddStuff extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { department, ClassName, CourseNumber} = data;
+    const { department, ClassName, CourseNumber } = data;
     const owner = Meteor.user().username;
     Stuffs.insert({ department, ClassName, CourseNumber, owner }, this.insertCallback);
   }

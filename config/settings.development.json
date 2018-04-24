@@ -1,13 +1,25 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "username": "Admin", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "username": "John", "password": "changeme" }
+    { "email": "admin@foo.com",
+      "username": "Admin",
+      "password": "changeme",
+      "major": "Administration",
+      "name": "Administrator",
+      "role": "admin"
+    },
+
+    { "email": "john@foo.com",
+      "username": "JFoo",
+      "password": "changeme",
+      "major": "Computer Science",
+      "name": "John Foo"
+    }
   ],
 
   "defaultData": [
-    { "department": "ICS", "ClassName": "Algorithms", "CourseNumber": 311, "owner": "john@foo.com" },
-    { "department": "ICS", "ClassName": "Software Engineering", "CourseNumber": 314, "owner": "john@foo.com" },
-    { "department": "ENG", "ClassName": "Composition I", "CourseNumber": 100, "owner": "admin@foo.com" }
+    { "department": "ICS", "ClassName": "Algorithms", "CourseNumber": 311, "owner": "JFoo" },
+    { "department": "ICS", "ClassName": "Software Engineering", "CourseNumber": 314, "owner": "JFoo" },
+    { "department": "ENG", "ClassName": "Composition I", "CourseNumber": 100, "owner": "Admin" }
   ],
 
   "defaultSession": [
