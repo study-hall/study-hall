@@ -3,10 +3,10 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Create a Meteor collection. */
-const Users = new Mongo.Collection('Users');
+const Tutors = new Mongo.Collection('Tutors');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
-const UserSchema = new SimpleSchema({
+const TutorSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
   image: String,
@@ -16,7 +16,7 @@ const UserSchema = new SimpleSchema({
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
-Users.attachSchema(UserSchema);
+Tutors.attachSchema(TutorSchema);
 
 /** Make the collection and schema available to other code. */
-export { Users, UserSchema };
+export { Tutors, TutorSchema };

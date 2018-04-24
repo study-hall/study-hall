@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, UserSchema } from '/imports/api/user/user';
+import { Tutors, TutorSchema } from '/imports/api/tutor/tutor';
 import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -11,7 +11,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 
 /** Renders the Page for adding a document. */
-class AddUser extends React.Component {
+class AddTutor extends React.Component {
 
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
@@ -36,7 +36,7 @@ class AddUser extends React.Component {
   submit(data) {
     const { firstName, lastName, address, image, description } = data;
     const owner = Meteor.user().username;
-    Users.insert({ firstName, lastName, address, image, description, owner }, this.insertCallback);
+    Tutors.insert({ firstName, lastName, address, image, description, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -44,8 +44,8 @@ class AddUser extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Add User</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={UserSchema} onSubmit={this.submit}>
+            <Header as="h2" textAlign="center">Add Tutor</Header>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={TutorSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='firstName'/>
                 <TextField name='lastName'/>
@@ -63,4 +63,4 @@ class AddUser extends React.Component {
   }
 }
 
-export default AddUser;
+export default AddTutor;
