@@ -16,8 +16,13 @@ import ManageSessions from '../pages/ManageSessions';
 import EditSession from '../pages/EditSession';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
+import ClassList from '../pages/ClassList';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import Accounting from '../pages/Accounting';
+import Biology from '../pages/Biology';
+import ICS from '../pages/ICS';
+import Physics from '../pages/Physics';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,6 +34,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
+              <Route path="/ClassList" component={ClassList}/>
+              <Route path="/Accounting" component={Accounting}/>
+              <Route path="/Biology" component={Biology}/>
+              <Route path="/ICS" component={ICS}/>
+              <Route path="/Physics" component={Physics}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/userhome" component={UserHome}/>
               <ProtectedRoute path="/list" component={ListStuff}/>

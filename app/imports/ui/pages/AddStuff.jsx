@@ -35,9 +35,9 @@ class AddStuff extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { department, ClassName, CourseNumber } = data;
+    const { department, ClassName, coursenumber} = data;
     const owner = Meteor.user().username;
-    Stuffs.insert({ department, ClassName, CourseNumber, owner }, this.insertCallback);
+    Stuffs.insert({ department, ClassName, coursenumber, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -50,7 +50,7 @@ class AddStuff extends React.Component {
               <Segment>
                 <TextField name='department'/>
                 <TextField name='ClassName'/>
-                <NumField name='CourseNumber' decimal={false}/>
+                <NumField name='coursenumber' decimal={false}/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>

@@ -8,7 +8,7 @@ const TutorSessions = new Mongo.Collection('TutorSessions');
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const SessionSchema = new SimpleSchema({
   tutor: String,
-  course: String,
+  department: String,
   coursenumber: Number,
   location: String,
   date: String,

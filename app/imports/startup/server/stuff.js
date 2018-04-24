@@ -4,7 +4,7 @@ import { Stuffs } from '../../api/stuff/stuff.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.className} (${data.owner})`);
+  console.log(`  Adding: ${data.Subject} (${data.owner})`);
   Stuffs.insert(data);
 }
 

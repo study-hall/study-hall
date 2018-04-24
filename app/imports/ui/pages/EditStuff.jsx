@@ -5,7 +5,6 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
@@ -18,8 +17,8 @@ class EditStuff extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { department, ClassName, CourseNumber,  _id } = data;
-    Stuffs.update(_id, { $set: { department, ClassName, CourseNumber } }, (error) => (error ?
+    const { department, ClassName, coursenumber, _id } = data;
+    Stuffs.update(_id, { $set: { department, ClassName, coursenumber } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -39,7 +38,7 @@ class EditStuff extends React.Component {
               <Segment>
                 <TextField name='department'/>
                 <TextField name='ClassName'/>
-                <NumField name='CourseNumber' decimal={false}/>
+                <NumField name='coursenumber' decimal={false}/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

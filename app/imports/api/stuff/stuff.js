@@ -9,7 +9,7 @@ const Stuffs = new Mongo.Collection('Stuffs');
 const StuffSchema = new SimpleSchema({
   department: String,
   ClassName: String,
-  CourseNumber: Number,
+  coursenumber: Number,
   owner: String,
 
   /* condition: {
