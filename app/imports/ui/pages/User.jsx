@@ -7,7 +7,7 @@ const UserProfile = new Mongo.Collection('UserProfile');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const SessionSchema = new SimpleSchema({
-  name: String,
+  Subject: String,
   TutorSessions: String,
   <Image floated='right' size='mini' src={this.props.contact.image} />
 }, { tracker: Tracker });

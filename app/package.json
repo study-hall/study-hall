@@ -1,5 +1,5 @@
 {
-  "name": "meteor-application-template-react",
+  "Subject": "meteor-application-template-react",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.39",
