@@ -1,7 +1,19 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "username": "Admin", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "username": "John", "password": "changeme" }
+    { "email": "admin@foo.com",
+      "username": "Admin",
+      "password": "changeme",
+      "major": "Administration",
+      "name": "Administrator",
+      "role": "admin"
+    },
+
+    { "email": "john@foo.com",
+      "username": "JFoo",
+      "password": "changeme",
+      "major": "Computer Science",
+      "name": "John Foo"
+    }
   ],
 
   "defaultData": [

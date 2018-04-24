@@ -9,7 +9,7 @@ class Landing extends React.Component {
     const itemColor = { color: '#FFFF00' };
     /* eslint-disable-next-line max-len */
     const topMargin = { marginTop: '50px' };
-    // const combined = _.extends({}, itemColor, topMargin);
+    const middleStyle = { paddingTop: '50px', color: '#FFFF00' };
     return (
         <div>
           <Grid columns={3} style={itemColor} container stackable centered>
@@ -41,7 +41,7 @@ class Landing extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Grid columns={2} style={topMargin} container stackable centered>
+          <Grid columns={2} style={middleStyle} container stackable centered>
             <Grid.Row>
               <Grid.Column>
                 <Image src="../../images/classlist.png" bordered medium></Image>
