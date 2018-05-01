@@ -11,7 +11,14 @@ export default class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', displayname: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      email: '',
+      displayname: '',
+      name: '',
+      major: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,8 +32,16 @@ export default class Signup extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { email, displayname, password } = this.state;
-    Accounts.createUser({ email, username: displayname, password }, (err) => {
+    const { email, displayname, name, major, password } = this.state;
+    Accounts.createUser({
+      email,
+      username: displayname,
+      password,
+      profile: {
+        major: major,
+        name: name,
+      },
+    }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -67,6 +82,24 @@ export default class Signup extends React.Component {
                       name="displayname"
                       type="displayname"
                       placeholder="Username"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input required
+                      label="Full Name"
+                      icon="user"
+                      iconPosition="left"
+                      name="name"
+                      type="name"
+                      placeholder="Full Name"
+                      onChange={this.handleChange}
+                  />
+                  <Form.Input required
+                      label="Major"
+                      icon="student"
+                      iconPosition="left"
+                      name="major"
+                      type="major"
+                      placeholder="Major"
                       onChange={this.handleChange}
                   />
                   <Form.Input required
