@@ -8,10 +8,10 @@ import PropTypes from 'prop-types';
 import _ from 'lodash'
 
 const tableData = [
-  { Subject: 'Intro to Financial Accounting', CourseNumber: 201},
-  { Subject: 'Federal Individl Income Taxatn', CourseNumber: 401},
-  { Subject: 'Law for the Accountant', CourseNumber: 413},
-  { Subject: 'Auditing', CourseNumber: 418},
+  { Subject: 'Intro to Financial Accounting', CourseNumber: 201, Add: 'Add'},
+  { Subject: 'Federal Individl Income Taxatn', CourseNumber: 401, Add: 'Add'},
+  { Subject: 'Law for the Accountant', CourseNumber: 413, Add: 'Add'},
+  { Subject: 'Auditing', CourseNumber: 418, Add: 'Add'},
 ]
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -57,13 +57,17 @@ class Accounting extends React.Component {
                 <Table.HeaderCell>
                   Course Number
                 </Table.HeaderCell>
+                <Table.HeaderCell>
+                  Add This Class
+                </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {_.map(data, ({Subject, CourseNumber}) => (
+              {_.map(data, ({Subject, CourseNumber, Add}) => (
                   <Table.Row key={Subject}>
                     <Table.Cell>{Subject}</Table.Cell>
                     <Table.Cell>{CourseNumber}</Table.Cell>
+                    <Table.Cell>{Add}</Table.Cell>
                   </Table.Row>
               ))}
             </Table.Body>
