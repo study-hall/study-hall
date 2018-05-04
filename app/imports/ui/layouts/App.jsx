@@ -10,6 +10,7 @@ import UserHome from '../pages/UserHome';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddTutor from '../pages/AddTutor';
 import EditStuff from '../pages/EditStuff';
+import Sessions from '../pages/SessionList';
 import TutorSignup from '../pages/TutorSignup';
 import ManageSessions from '../pages/ManageSessions';
 import EditSession from '../pages/EditSession';
@@ -35,6 +36,7 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/ClassList" component={ClassList}/>
               <Route path="/Accounting" component={Accounting}/>
+              <Route path="/Sessions" component={Sessions}/>
               <Route path="/Biology" component={Biology}/>
               <Route path="/ICS" component={ICS}/>
               <Route path="/Physics" component={Physics}/>

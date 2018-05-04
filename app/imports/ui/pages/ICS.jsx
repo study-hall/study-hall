@@ -6,6 +6,7 @@ import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import _ from 'lodash'
+import { withRouter, Link } from 'react-router-dom';
 
 const tableData = [
   { Subject: 'Discrete Math for CS I', CourseNumber: 141},
@@ -57,6 +58,9 @@ class ICS extends React.Component {
                 <Table.HeaderCell>
                   Course Number
                 </Table.HeaderCell>
+                <Table.HeaderCell>
+                  View Class Sessions
+                </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -64,6 +68,7 @@ class ICS extends React.Component {
                   <Table.Row key={Subject}>
                     <Table.Cell>{Subject}</Table.Cell>
                     <Table.Cell>{CourseNumber}</Table.Cell>
+                    <Table.Cell><Link to={`/Sessions/${this.props.stuffs._id}`}>View</Link></Table.Cell>
                   </Table.Row>
               ))}
             </Table.Body>
